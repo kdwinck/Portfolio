@@ -13,16 +13,20 @@ body {
 
 header {
   background-color: lightblue;
-  height: 300px;
+  height: 400px;
 }
 
 nav {
   display: flex;
-  height: 25%;
+  height: 23%;
 }
 
 ul {
   padding-left: 0px;
+}
+
+.template {
+  visibility: hidden;
 }
 
 #nav {
@@ -33,14 +37,8 @@ ul {
   padding: 0px;
 }
 
-#nav-first {
-  width: 25%;
-  display: flex;
-  justify-content: space-around;
-}
-
-#nav-last {
-  width: 25%;
+#nav-list {
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
@@ -53,7 +51,7 @@ ul {
 #banner {
   height: 75%;
   width: 100%;
-  background-color: grey;
+  background-image: url('carnival-home-port-seattle-1.jpg')
 }
 
 #nav li {
