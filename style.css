@@ -35,6 +35,15 @@ ul {
   height: auto;
 }
 
+#projects h1 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.article-body p{
+  margin-top: 0px;
+}
+
 #nav {
   width: 100%;
   display: flex;
