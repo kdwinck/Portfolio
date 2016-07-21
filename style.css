@@ -12,11 +12,13 @@ body {
 }
 
 header {
-  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
   height: 400px;
 }
 
 nav {
+  background-color: lightblue;
   display: flex;
   height: 23%;
 }
@@ -26,7 +28,11 @@ ul {
 }
 
 .template {
-  visibility: hidden;
+  display: none;
+}
+
+#projects header {
+  height: auto;
 }
 
 #nav {
