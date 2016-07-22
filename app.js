@@ -36,3 +36,13 @@ projectData.forEach(function(obj) {
 projectsArray.forEach(function(proj) {
   $('#projects').append(proj.toHtml());
 });
+
+$('nav li').on('click', function() {
+  var $whatToShow = $(this).data('tab');
+  $('.tab-content').hide();
+  $('#' + $whatToShow).fadeIn(1000);
+});
+
+$(function() {
+  $('.tab-content').hide();
+});
