@@ -31,6 +31,11 @@ ul {
   display: none;
 }
 
+img {
+  max-width: 100%;
+  align-content: center;
+}
+
 #projects header {
   height: auto;
 }
@@ -65,7 +70,7 @@ ul {
 
 #banner {
   height: 75%;
-  width: 100%;
+  max-width: 100%;
   background-image: url('carnival-home-port-seattle-1.jpg')
 }
 
