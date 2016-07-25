@@ -45,9 +45,12 @@ $('nav li').on('click', function() {
 
 $(function() {
   $('.tab-content').hide();
+  $('#projects').show();     //show projects section as default(home)
 });
 
 ///////////////////////////////////////////////////////////////////////////////
+// toggle nav menu ///
+
 $('#banner').on('click', '.icon-menu-1', function() {
-  $(this).parent().siblings().toggle(1000);
+  $(this).parent().siblings().toggle(500);
 });

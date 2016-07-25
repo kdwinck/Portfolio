@@ -9,7 +9,7 @@ var projectData = [
     title:  'Bus-Mall',
     url:    'http://kdwinck.github.io/bus-mall/',
     body:   'Lorem veniam sint ex cillum magna commodo dolor anim consectetur labore ex nulla aliquip aliquip laborum nisi proident. Et non culpa quis deserunt ex consectetur sint elit do nisi duis voluptate mollit. Fugiat voluptate mollit dolor duis sit pariatur commodo reprehenderit qui velit id magna dolore deserunt aute cupidatat. Veniam velit exercitation duis sit duis sit dolore eu laboris consectetur laboris mollit. Reprehenderit enim do commodo amet consectetur elit enim. Consectetur sit sit in fugiat minim est occaecat elit enim anim reprehenderit ea dolore consequat eu.',
-    img:    'assets/sbuscap.jpg'
+    img:    'assets/buscap.jpg'
   },
   {
     title:  '8-bit',

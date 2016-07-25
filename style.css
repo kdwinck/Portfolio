@@ -15,7 +15,7 @@ header {
   display: flex;
   max-width: 100%;
   flex-direction: column;
-  height: 21em;
+  max-height: 30em;
 }
 
 main {
@@ -24,19 +24,30 @@ main {
 }
 
 nav {
-  background-color: lightblue;
+  background-color: rgb(87, 112, 215);
   display: flex;
-  height: 23%;
-}
-
-ul {
-  padding-left: 0px;
+  justify-content: center;
+  height: 15em;
 }
 
 img {
   max-width: 100%;
   align-content: center;
   border: 1px solid black;
+}
+
+ul {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+li {
+  margin: .2em;
+  font-size: 3em;
+}
+
+li:hover {
+  color: white;
 }
 
 .icon-menu-1 {
@@ -54,7 +65,7 @@ img {
 }
 
 #banner {
-  height: 75%;
+  height: 15em;
   max-width: 100%;
   background-image: url('assets/headbg.png');
   border-bottom: 1px solid black;
@@ -77,23 +88,18 @@ img {
 #nav {
   display: none;
   width: 100%;
-  /*align-items: center;
-  justify-content: space-around;*/
   padding: 0px;
 }
 
 #nav-list {
-  width: 100%;
+  max-width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 
 #social {
   display: flex;
   justify-content: space-around;
-}
-
-
-#nav li {
-  list-style-type: none;
 }
