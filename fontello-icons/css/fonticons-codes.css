@@ -1,0 +1,9 @@
+
+.icon-home:before { content: '\e800'; } /* '' */
+.icon-mail:before { content: '\e801'; } /* '' */
+.icon-menu-1:before { content: '\f008'; } /* '' */
+.icon-facebook-circled:before { content: '\f051'; } /* '' */
+.icon-github-circled-alt2:before { content: '\f056'; } /* '' */
+.icon-twitter-circled:before { content: '\f057'; } /* '' */
+.icon-linkedin:before { content: '\f05c'; } /* '' */
+.icon-user-male:before { content: '\f062'; } /* '' */
