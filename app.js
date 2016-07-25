@@ -46,3 +46,8 @@ $('nav li').on('click', function() {
 $(function() {
   $('.tab-content').hide();
 });
+
+///////////////////////////////////////////////////////////////////////////////
+$('#banner').on('click', '.icon-menu-1', function() {
+  $(this).parent().siblings().toggle(1000);
+});
