@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  width: 80%;
+  width: 100%;
   height: auto;
   margin: 0px auto;
   display: flex;
@@ -13,8 +13,14 @@ body {
 
 header {
   display: flex;
+  max-width: 100%;
   flex-direction: column;
-  height: 400px;
+  height: 21em;
+}
+
+main {
+  max-width: 80%;
+  margin: auto;
 }
 
 nav {
@@ -27,14 +33,26 @@ ul {
   padding-left: 0px;
 }
 
-.template {
-  display: none;
-}
 
 img {
   max-width: 100%;
   align-content: center;
   border: 1px solid black;
+}
+
+
+.template {
+  display: none;
+}
+
+.article-body p{
+  margin-top: 0px;
+}
+
+#banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;;
 }
 
 #projects header {
@@ -44,10 +62,6 @@ img {
 #projects h1 {
   margin-bottom: 5px;
   font-size: 24px;
-}
-
-.article-body p{
-  margin-top: 0px;
 }
 
 #nav {
@@ -72,7 +86,7 @@ img {
 #banner {
   height: 75%;
   max-width: 100%;
-  background-image: url('carnival-home-port-seattle-1.jpg')
+  background-image: url('headbg.png');
 }
 
 #nav li {
