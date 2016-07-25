@@ -1,0 +1,22 @@
+@media (min-width: 680px) {
+  quote {
+    display: block;
+  }
+  .icon-menu-1 {
+    display: none;
+  }
+  #nav {
+    display: flex;
+    max-height: 3em;
+  }
+  #nav-list {
+    display: flex;
+    flex-direction: row;
+  }
+  #social {
+    margin-top: 11em;
+  }
+  #nav-list li{
+    margin: 0em 1em;
+  }
+}
