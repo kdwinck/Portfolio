@@ -1,4 +1,4 @@
-@media (min-width: 680px) {
+@media (min-width: 680px) and (max-width: 1199px) {
   quote {
     display: block;
   }
@@ -18,5 +18,29 @@
   }
   #nav-list li{
     margin: 0em 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    max-width: 80%;
+  }
+  .icon-menu-1 {
+    display: none;
+  }
+  main {
+    margin-left: 20%;
+  }
+  #nav {
+    display: block;
+    position: fixed;
+    max-width: 20%;
+    height: auto;
+    top: 16em;
+  }
+  #nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
