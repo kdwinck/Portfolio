@@ -50,7 +50,9 @@ quote {
   display: none;
 }
 
-
+select {
+  max-height: 2em;
+}
 .icon-menu-1 {
   float: left;
   font-size: 3em;
@@ -93,6 +95,7 @@ quote {
 
 #nav {
   display: none;
+  align-items: center;
   max-width: 100%;
   padding: 0px;
 }

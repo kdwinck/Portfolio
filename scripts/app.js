@@ -19,6 +19,7 @@ Project.prototype.toHtml = function() {
   $newProject.find('header p').text(this.type);
   $newProject.find('a').attr('href', this.url);
   $newProject.find('img').attr('src', this.img);
+  $newProject.attr('data-type', this.type);
   $newProject.find('.article-body').html(this.body);
 
   // create an HR element after every project
