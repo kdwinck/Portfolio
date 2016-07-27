@@ -3,28 +3,41 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=max-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyle's Portfolio</title>
-    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="fontello-icons/css/fonticons.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
   </head>
 
   <body>
 
     <header>
+
       <div id="banner">
-        <p id="quote"></p>
-        <div id="profilePic"></div>
+        <img id="prof-pic" src="assets/headshot.jpg" alt="Profile Picture">
+        <!-- <quote>"Nothing works unless you do."</quote> -->
+        <div class="icon-menu-1"></div>
+        <ul id="social">
+          <li class="icon-facebook-circled"></li>
+          <li class="icon-twitter-circled"></li>
+          <li class="icon-linkedin"></li>
+          <li class="icon-github-circled-alt2"></li>
+        </ul>
       </div>
-      <nav  id="nav">
+
+      <nav id="nav">
 
         <ul id="nav-list">
-
-          <li data-tab='projects'>Portfolio</li>
-          <li data-tab='about'>About</li>
-          <li data-tab='contact'>Contact</li>
-
+          <li class="icon-home" data-tab='projects'>Portfolio</li>
+          <li class="icon-user-male" data-tab='about'>About</li>
+          <li class="icon-mail" data-tab='contact'>Contact</li>
         </ul>
+
+        <select>
+          <option value="">Filter by Project Type</option>
+        </select>
 
       </nav>
     </header>
@@ -35,6 +48,7 @@
         <article class="template">
           <header>
             <h1>Title</h1>
+            <p id="type">type</p>
           </header>
           <section class="article-body"></section>
           <a href="" target="_blank"><img src="" alt=""></a>
@@ -50,17 +64,16 @@
       </section>
 
       <section id="contact" class="tab-content">
-        <!-- will be the contact section of the page -->
         <h1>Contact</h1>
         <p>contact me and shit</p>
       </section>
 
     </main>
 
-
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="projects.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="scripts/projects.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/projectsView.js"></script>
   </body>
 
 </html>
