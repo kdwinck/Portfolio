@@ -19,7 +19,7 @@ projectView.sortByType = function() {
       var $type = $(this).val();
       $('article[data-type="' + $type + '"]').fadeIn('slow');
     } else {
-      $('article:gt(0)').show();
+      $('article:gt(0)').show(); /// will show all projects except the template
     }
   });
 };
