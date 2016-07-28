@@ -1,3 +1,20 @@
+.icon-menu-1:hover {
+  background-color: rgba(203, 201, 208, .5);
+}
+
+#nav-list li:hover {
+  color: white;
+}
+
+#prof-pic {
+  float: right;
+  margin: 1em 1em;
+}
+
+#projects header {
+  height: auto;
+}
+
 @media (min-width: 680px) and (max-width: 1199px) {
   quote {
     display: block;
@@ -6,7 +23,7 @@
     display: none;
   }
   #nav {
-    display: flex;
+    display: flex !important;
     max-height: 3em;
   }
   #nav-list {
@@ -32,7 +49,7 @@
     margin-left: 20%;
   }
   #nav {
-    display: block;
+    display: block !important;
     position: fixed;
     max-width: 20%;
     height: auto;

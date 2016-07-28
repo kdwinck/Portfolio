@@ -11,24 +11,15 @@ function Project(obj) {
 }
 
 Project.prototype.toHtml = function() {
-  // create a cloned version of the blank project article
-  var $newProject = $('article.template').clone();
+  // get template from the DOM
+  var source = $('#project-template').html();
+  // create template function
+  var template = Handlebars.compile(source);
 
-  // fill in the unique values of each project
-  $newProject.find('h1').text(this.title);
-  $newProject.find('header p').text(this.type);
-  $newProject.find('a').attr('href', this.url);
-  $newProject.find('img').attr('src', this.img);
-  $newProject.attr('data-type', this.type);
-  $newProject.find('.article-body').html(this.body);
+  // pass in data to the template function
+  var html = template(this);
 
-  // create an HR element after every project
-  $newProject.append('<hr>');
-
-  // remove template class so article is visible
-  $newProject.removeClass('template');
-
-  return $newProject;
+  return html;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -55,5 +46,5 @@ $(function() {
 // toggle nav menu ///
 
 $('#banner').on('click', '.icon-menu-1', function() {
-  $(this).parent().siblings().toggle(500);
+  $(this).parent().siblings().slideToggle(500);
 });
