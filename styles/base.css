@@ -1,0 +1,62 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 5px;
+}
+
+header {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  max-height: 30em;
+}
+
+main {
+  max-width: 80%;
+  margin: auto;
+}
+
+nav {
+  background-color: rgb(129, 186, 176);
+  display: flex;
+  justify-content: center;
+  height: 10em;
+}
+
+img {
+  max-width: 100%;
+  align-content: center;
+  border: 1px solid black;
+}
+
+ul {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+li {
+  margin: .2em;
+  font-size: 2em;
+}
+
+quote {
+  display: none;
+}
+
+select {
+  max-height: 2em;
+  margin: 1em;
+}

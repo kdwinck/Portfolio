@@ -7,9 +7,21 @@
     <title>Kyle's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link rel="stylesheet" href="fontello-icons/css/fonticons.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/media.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
   </head>
+
+  <script id="project-template" type="text/x-handlebars-template">
+    <article data-type="{{type}}" data-completion="{{completion}}">
+      <header>
+        <h1>{{this.title}}</h1>
+      </header>
+      <section class="article-body">{{{this.body}}}</section>
+      <a href="{{url}}" target="_blank"><img src="{{img}}" alt=""></a>
+      <hr>
+    </article>
+  </script>
 
   <body>
 
@@ -35,9 +47,6 @@
           <li class="icon-mail" data-tab='contact'>Contact</li>
         </ul>
 
-        <select>
-          <option value="">Filter by Project Type</option>
-        </select>
 
       </nav>
     </header>
@@ -45,14 +54,15 @@
     <main>
 
       <section id="projects" class="tab-content">
-        <article class="template">
-          <header>
-            <h1>Title</h1>
-            <p id="type">type</p>
-          </header>
-          <section class="article-body"></section>
-          <a href="" target="_blank"><img src="" alt=""></a>
-        </article>
+
+        <select id="type">
+          <option value="">Filter by Project Type</option>
+        </select>
+
+        <select id="completion">
+          <option value="">Filter by Completion</option>
+        </select>
+
       </section>
 
       <section id="about" class="tab-content">
@@ -71,6 +81,8 @@
     </main>
 
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="scripts/projects.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/projectsView.js"></script>
