@@ -6,6 +6,7 @@ function Project(obj) {
   this.title = obj.title;
   this.type = obj.type;
   this.completion = obj.completion;
+  this.date = obj.date;
   this.url = obj.url;
   this.body = obj.body;
   this.img = obj.img;
@@ -40,7 +41,7 @@ $('nav li').on('click', function() {
 
 $(function() {
   $('.tab-content').hide();
-  $('#projects').show();     //show projects section as default(home)
+  $('#projects-section').show();     //show projects section as default(home)
 });
 
 ///////////////////////////////////////////////////////////////////////////////

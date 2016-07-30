@@ -13,7 +13,7 @@
   </head>
 
   <script id="project-template" type="text/x-handlebars-template">
-    <article data-type="{{type}}" data-completion="{{completion}}">
+    <article data-type="{{type}}" data-completion="{{completion}}" data-date="{{date}}">
       <header>
         <h1>{{this.title}}</h1>
       </header>
@@ -42,7 +42,7 @@
       <nav id="nav">
 
         <ul id="nav-list">
-          <li class="icon-home" data-tab='projects'>Portfolio</li>
+          <li class="icon-home" data-tab='projects-section'>Portfolio</li>
           <li class="icon-user-male" data-tab='about'>About</li>
           <li class="icon-mail" data-tab='contact'>Contact</li>
         </ul>
@@ -53,15 +53,24 @@
 
     <main>
 
-      <section id="projects" class="tab-content">
+      <section id="projects-section" class="tab-content">
 
-        <select id="type">
-          <option value="">Filter by Project Type</option>
-        </select>
+        <section>
+          <select id="type">
+            <option value="">Filter by Project Type</option>
+          </select>
 
-        <select id="completion">
-          <option value="">Filter by Completion</option>
-        </select>
+          <select id="completion">
+            <option value="">Filter by Completion</option>
+          </select>
+
+          <select id="date">
+            <option value="">Newest First</option>
+            <option value="1">Oldest First</option>
+          </select>
+        </section>
+
+        <section id="projects"></section>
 
       </section>
 
