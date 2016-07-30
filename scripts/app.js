@@ -5,6 +5,7 @@ var projectsArray = [];
 function Project(obj) {
   this.title = obj.title;
   this.type = obj.type;
+  this.completion = obj.completion;
   this.url = obj.url;
   this.body = obj.body;
   this.img = obj.img;
@@ -34,7 +35,7 @@ projectsArray.forEach(function(proj) {
 $('nav li').on('click', function() {
   var $whatToShow = $(this).data('tab');
   $('.tab-content').hide();
-  $('#' + $whatToShow).fadeIn(1000);
+  $('#' + $whatToShow).toggle('blind');
 });
 
 $(function() {
