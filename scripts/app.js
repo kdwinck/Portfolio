@@ -6,9 +6,11 @@ function Project(obj) {
   this.title = obj.title;
   this.type = obj.type;
   this.completion = obj.completion;
+  this.date = obj.date;
   this.url = obj.url;
   this.body = obj.body;
   this.img = obj.img;
+  this.video = obj.video;
 }
 
 Project.prototype.toHtml = function() {
@@ -35,12 +37,12 @@ projectsArray.forEach(function(proj) {
 $('nav li').on('click', function() {
   var $whatToShow = $(this).data('tab');
   $('.tab-content').hide();
-  $('#' + $whatToShow).toggle('blind');
+  $('#' + $whatToShow).show();
 });
 
 $(function() {
   $('.tab-content').hide();
-  $('#projects').show();     //show projects section as default(home)
+  $('#projects-section').show();     //show projects section as default(home)
 });
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,9 @@
+/*#05668D
+#028090
+#00A896
+#02C39A
+#F0F3BD*/
+
 html {
   height: 100%;
   width: 100%;
@@ -5,6 +11,7 @@ html {
 
 body {
   width: 100%;
+  font-family: 'Droid Serif', serif;
   height: auto;
   margin: 0px auto;
   display: flex;
@@ -14,7 +21,7 @@ body {
 
 h1 {
   font-size: 3em;
-  margin-bottom: 5px;
+  color: #02C39A;
 }
 
 header {
@@ -30,7 +37,7 @@ main {
 }
 
 nav {
-  background-color: rgb(129, 186, 176);
+  background-color: #F0F3BD;
   display: flex;
   justify-content: center;
   height: 10em;
@@ -40,6 +47,10 @@ img {
   max-width: 100%;
   align-content: center;
   border: 1px solid black;
+}
+
+video {
+  max-width: 100%;
 }
 
 ul {
@@ -54,6 +65,8 @@ li {
 
 quote {
   display: none;
+  font-size: 2em;
+  color: #F0F3BD;
 }
 
 select {

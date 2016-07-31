@@ -19,6 +19,9 @@ projectView.sortByType = function() {
     } else {
       $('article').show(); /// will show all projects except the template
     }
+    // reset other filters
+    $('#completion').val('');
+    $('#date').val('');
   });
 };
 
@@ -31,6 +34,45 @@ projectView.sortByCompletion = function() {
     } else {
       $('article').show();
     }
+    $('#type').val('');
+    $('#date').val('');
+  });
+};
+
+projectView.sortByDate = function() {
+  $('#date').on('change', function() {
+    $('#projects').empty();
+    if ($(this).val()) {
+      // sort by oldest
+      projectsArray.sort(function (a, b) {
+        if (a.date > b.date) {
+          return 1;
+        }
+        if (a.date < b.date) {
+          return -1;
+        }
+        return 0;
+      });
+      projectsArray.forEach(function(proj) {
+        $('#projects').append(proj.toHtml());
+      });
+    } else {
+      // sort by most recent
+      projectsArray.sort(function (a, b) {
+        if (a.date < b.date) {
+          return 1;
+        }
+        if (a.date > b.date) {
+          return -1;
+        }
+        return 0;
+      });
+      projectsArray.forEach(function(proj) {
+        $('#projects').append(proj.toHtml());
+      });
+    }
+    $('#type').val('');
+    $('#completion').val('');
   });
 };
 
@@ -49,6 +91,7 @@ $(function() {
   projectView.populateFilter('completion');
   projectView.sortByType();
   projectView.sortByCompletion();
+  projectView.sortByDate();
   projectView.sortable();
   projectView.excitedIcons();
 });
