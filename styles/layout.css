@@ -1,12 +1,15 @@
+quote p {
+  max-width: 50%;
+
+  margin-left: 5em;
+  margin-bottom: .1em;
+}
+
 .icon-menu-1 {
   float: left;
   font-size: 3em;
   margin: .25em .25em;
   border-radius: .1em;
-}
-
-.template {
-  display: none;
 }
 
 .article-body p{
@@ -16,7 +19,8 @@
 #banner {
   height: 15em;
   max-width: 100%;
-  background-image: url('/assets/headbg.png');
+  background: #00A896;
+  background-image: linear-gradient( #028090, #00A896);
   border-bottom: 1px solid black;
 }
 
@@ -37,7 +41,7 @@
 
 #social {
   clear: left;
-  margin-top: 11.5em;
+  margin-top: 11em;
   max-width: 20em;
   display: flex;
   justify-content: space-around;

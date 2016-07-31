@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyle's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="fontello-icons/css/fonticons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -18,8 +19,7 @@
         <h1>{{this.title}}</h1>
       </header>
       <section class="article-body">{{{this.body}}}</section>
-      <a href="{{url}}" target="_blank"><img src="{{img}}" alt=""></a>
-      <hr>
+      <a href="{{url}}" target="_blank"><video autoplay src="{{video}}" poster="{{img}}"></a>
     </article>
   </script>
 
@@ -29,14 +29,19 @@
 
       <div id="banner">
         <img id="prof-pic" src="assets/headshot.jpg" alt="Profile Picture">
-        <!-- <quote>"Nothing works unless you do."</quote> -->
+        <quote>
+          <p>"Nothing works unless you do."</p>
+          <p>- Maya Angelou</p>
+        </quote>
         <div class="icon-menu-1"></div>
+
         <ul id="social">
           <li class="icon-facebook-circled"></li>
           <li class="icon-twitter-circled"></li>
           <li class="icon-linkedin"></li>
           <li class="icon-github-circled-alt2"></li>
         </ul>
+
       </div>
 
       <nav id="nav">
@@ -55,7 +60,7 @@
 
       <section id="projects-section" class="tab-content">
 
-        <section>
+        <section id="selectors">
           <select id="type">
             <option value="">Filter by Project Type</option>
           </select>

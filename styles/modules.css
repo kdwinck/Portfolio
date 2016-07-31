@@ -3,7 +3,7 @@
 }
 
 #nav-list li:hover {
-  color: white;
+  color: #05668D;
 }
 
 #prof-pic {
@@ -12,15 +12,28 @@
 }
 
 #projects header {
-  height: auto;
+  align-items: center;
+}
+
+#social li:hover {
+  color: #F0F3BD;
 }
 
 @media (min-width: 680px) and (max-width: 1199px) {
-  quote {
-    display: block;
+  article {
+    background-color: rgb(245, 245, 245);
+    margin: 1em;
+    padding: 1em;
   }
   .icon-menu-1 {
     display: none;
+  }
+  #selectors {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
   }
   #nav {
     display: flex !important;
@@ -32,6 +45,7 @@
   }
   #social {
     margin-top: 11em;
+    left: 10em;
   }
   #nav-list li{
     margin: 0em 1em;
@@ -39,6 +53,11 @@
 }
 
 @media (min-width: 1200px) {
+  article {
+    background-color: rgb(245, 245, 245);
+    margin: 1em;
+    padding: 1em;
+  }
   body {
     max-width: 80%;
   }
@@ -48,12 +67,26 @@
   main {
     margin-left: 20%;
   }
+  quote {
+    display: block;
+  }
+  #selectors {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #social {
+    margin-top: 2.7em;
+  }
   #nav {
     display: block !important;
     position: fixed;
     max-width: 20%;
     height: auto;
     top: 16em;
+    border-radius: 1em;
   }
   #nav-list {
     display: flex;

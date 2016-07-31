@@ -10,6 +10,7 @@ function Project(obj) {
   this.url = obj.url;
   this.body = obj.body;
   this.img = obj.img;
+  this.video = obj.video;
 }
 
 Project.prototype.toHtml = function() {
@@ -36,7 +37,7 @@ projectsArray.forEach(function(proj) {
 $('nav li').on('click', function() {
   var $whatToShow = $(this).data('tab');
   $('.tab-content').hide();
-  $('#' + $whatToShow).toggle('blind');
+  $('#' + $whatToShow).show();
 });
 
 $(function() {
