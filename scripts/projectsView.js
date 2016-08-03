@@ -86,7 +86,30 @@ projectView.excitedIcons = function() {
   });
 };
 
-$(function() {
+projectView.handleNavigation = function() {
+  $('nav li').on('click', function() {
+    var $whatToShow = $(this).data('tab');
+    $('.tab-content').hide();
+    $('#' + $whatToShow).show();
+  });
+
+  $(function() {
+    $('.tab-content').hide();
+    $('#projects-section').show();     //show projects section as default(home)
+  });
+};
+
+projectView.toggleNavIcon = function() {
+  $('#banner').on('click', '.icon-menu-1', function() {
+    $(this).parent().siblings().slideToggle(500);
+  });
+};
+
+
+projectView.initIndexPage = function() {
+  Project.all.forEach(function(proj) {
+    $('#projects').append(proj.toHtml());
+  });
   projectView.populateFilter('type');
   projectView.populateFilter('completion');
   projectView.sortByType();
@@ -94,4 +117,6 @@ $(function() {
   projectView.sortByDate();
   projectView.sortable();
   projectView.excitedIcons();
-});
+  projectView.handleNavigation();
+  projectView.toggleNavIcon();
+};
