@@ -39,6 +39,7 @@ Project.fetchContent = function() {
     projectView.initIndexPage();
   } else {
     $.getJSON('../data/projects.json', function(data) {
+      console.log(data);
     }).done(function(data) {
       Project.loadContent(data);
       var stringData = JSON.stringify(data);

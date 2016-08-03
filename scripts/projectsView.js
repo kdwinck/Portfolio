@@ -44,7 +44,7 @@ projectView.sortByDate = function() {
     $('#projects').empty();
     if ($(this).val()) {
       // sort by oldest
-      projectsArray.sort(function (a, b) {
+      Projects.all.sort(function (a, b) {
         if (a.date > b.date) {
           return 1;
         }
@@ -53,12 +53,12 @@ projectView.sortByDate = function() {
         }
         return 0;
       });
-      projectsArray.forEach(function(proj) {
+      Projects.all.forEach(function(proj) {
         $('#projects').append(proj.toHtml());
       });
     } else {
       // sort by most recent
-      projectsArray.sort(function (a, b) {
+      Projects.all.sort(function (a, b) {
         if (a.date < b.date) {
           return 1;
         }
@@ -67,7 +67,7 @@ projectView.sortByDate = function() {
         }
         return 0;
       });
-      projectsArray.forEach(function(proj) {
+      Projects.all.forEach(function(proj) {
         $('#projects').append(proj.toHtml());
       });
     }
@@ -112,11 +112,11 @@ projectView.initIndexPage = function() {
   });
   projectView.populateFilter('type');
   projectView.populateFilter('completion');
+  projectView.handleNavigation();
   projectView.sortByType();
   projectView.sortByCompletion();
   projectView.sortByDate();
   projectView.sortable();
   projectView.excitedIcons();
-  projectView.handleNavigation();
   projectView.toggleNavIcon();
 };
