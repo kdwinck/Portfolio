@@ -1,6 +1,3 @@
-////////////// Global Variables ///////////////////////////////////////////////
-var projectsArray = [];
-
 ///////////////////////////////////////////////////////////////////////////////
 function Project(obj) {
   this.title = obj.title;
@@ -13,6 +10,8 @@ function Project(obj) {
   this.video = obj.video;
 }
 
+Project.all = [];
+
 Project.prototype.toHtml = function() {
   // get template from the DOM
   var source = $('#project-template').html();
@@ -20,34 +19,32 @@ Project.prototype.toHtml = function() {
   var template = Handlebars.compile(source);
 
   // pass in data to the template function
-  var html = template(this);
-
-  return html;
+  return template(this);
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-projectData.forEach(function(obj) {
-  projectsArray.push(new Project(obj));
-});
 
-projectsArray.forEach(function(proj) {
-  $('#projects').append(proj.toHtml());
-});
+Project.loadContent = function(rawData) {
+  rawData.forEach(function(obj) {
+    Project.all.push(new Project(obj));
+  });
+};
 
-$('nav li').on('click', function() {
-  var $whatToShow = $(this).data('tab');
-  $('.tab-content').hide();
-  $('#' + $whatToShow).show();
-});
+//////////////////////////////////////////////////////////////////////////////
 
-$(function() {
-  $('.tab-content').hide();
-  $('#projects-section').show();     //show projects section as default(home)
-});
-
-///////////////////////////////////////////////////////////////////////////////
-// toggle nav menu ///
-
-$('#banner').on('click', '.icon-menu-1', function() {
-  $(this).parent().siblings().slideToggle(500);
-});
+Project.fetchContent = function() {
+  if (localStorage.rawData) {
+    var data = JSON.parse(localStorage.getItem('rawData'));
+    Project.loadContent(data);
+    projectView.initIndexPage();
+  } else {
+    $.getJSON('../data/projects.json', function(data) {
+      console.log(data);
+    }).done(function(data) {
+      Project.loadContent(data);
+      var stringData = JSON.stringify(data);
+      localStorage.setItem('rawData', stringData);
+      projectView.initIndexPage();
+    });
+  }
+};

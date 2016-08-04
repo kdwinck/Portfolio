@@ -44,7 +44,7 @@ projectView.sortByDate = function() {
     $('#projects').empty();
     if ($(this).val()) {
       // sort by oldest
-      projectsArray.sort(function (a, b) {
+      Projects.all.sort(function (a, b) {
         if (a.date > b.date) {
           return 1;
         }
@@ -53,12 +53,12 @@ projectView.sortByDate = function() {
         }
         return 0;
       });
-      projectsArray.forEach(function(proj) {
+      Projects.all.forEach(function(proj) {
         $('#projects').append(proj.toHtml());
       });
     } else {
       // sort by most recent
-      projectsArray.sort(function (a, b) {
+      Projects.all.sort(function (a, b) {
         if (a.date < b.date) {
           return 1;
         }
@@ -67,7 +67,7 @@ projectView.sortByDate = function() {
         }
         return 0;
       });
-      projectsArray.forEach(function(proj) {
+      Projects.all.forEach(function(proj) {
         $('#projects').append(proj.toHtml());
       });
     }
@@ -86,12 +86,37 @@ projectView.excitedIcons = function() {
   });
 };
 
-$(function() {
+projectView.handleNavigation = function() {
+  $('nav li').on('click', function() {
+    var $whatToShow = $(this).data('tab');
+    $('.tab-content').hide();
+    $('#' + $whatToShow).show();
+  });
+
+  $(function() {
+    $('.tab-content').hide();
+    $('#projects-section').show();     //show projects section as default(home)
+  });
+};
+
+projectView.toggleNavIcon = function() {
+  $('#banner').on('click', '.icon-menu-1', function() {
+    $(this).parent().siblings().slideToggle(500);
+  });
+};
+
+
+projectView.initIndexPage = function() {
+  Project.all.forEach(function(proj) {
+    $('#projects').append(proj.toHtml());
+  });
   projectView.populateFilter('type');
   projectView.populateFilter('completion');
+  projectView.handleNavigation();
   projectView.sortByType();
   projectView.sortByCompletion();
   projectView.sortByDate();
   projectView.sortable();
   projectView.excitedIcons();
-});
+  projectView.toggleNavIcon();
+};
