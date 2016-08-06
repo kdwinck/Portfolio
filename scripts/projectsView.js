@@ -4,6 +4,7 @@
 
   var projectView = {};
 
+  //////// populate filter helper function ////////////////////////////
   projectView.populateFilter = function(id) {
     $('article').each(function() {
       var $value = $(this).data(id);
@@ -48,32 +49,16 @@
       $('#projects').empty();
       if ($(this).val()) {
         // sort by oldest
-        Projects.all.sort(function (a, b) {
-          if (a.date > b.date) {
-            return 1;
-          }
-          if (a.date < b.date) {
-            return -1;
-          }
-          return 0;
+        Project.all.sort(function (a, b) {
+          return (new Date(a.date) - new Date(b.date));
         });
-        Projects.all.forEach(function(proj) {
-          $('#projects').append(proj.toHtml());
-        });
+        projectView.appendToPage();
       } else {
         // sort by most recent
-        Projects.all.sort(function (a, b) {
-          if (a.date < b.date) {
-            return 1;
-          }
-          if (a.date > b.date) {
-            return -1;
-          }
-          return 0;
+        Project.all.sort(function (a, b) {
+          return (new Date(b.date) - new Date(a.date));
         });
-        Projects.all.forEach(function(proj) {
-          $('#projects').append(proj.toHtml());
-        });
+        projectView.appendToPage();
       }
       $('#type').val('');
       $('#completion').val('');
@@ -86,7 +71,7 @@
 
   projectView.excitedIcons = function() {
     $('#social').on('mouseover', 'li', function() {
-      $(this).effect('bounce', {times: 3, distance: 25}, 1000);
+      $(this).effect('bounce', {times: 3, distance: 15}, 1000);
     });
   };
 
@@ -109,11 +94,14 @@
     });
   };
 
-
-  projectView.initIndexPage = function() {
+  projectView.appendToPage = function() {
     Project.all.forEach(function(proj) {
       $('#projects').append(proj.toHtml());
     });
+  };
+
+  projectView.initIndexPage = function() {
+    projectView.appendToPage();
     projectView.populateFilter('type');
     projectView.populateFilter('completion');
     projectView.handleNavigation();
