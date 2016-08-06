@@ -73,3 +73,12 @@ select {
   max-height: 2em;
   margin: 1em;
 }
+
+p {
+  margin: 1em;
+}
+
+a {
+  color: white;
+  margin: 1em;
+}

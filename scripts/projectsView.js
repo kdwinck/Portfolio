@@ -84,7 +84,7 @@
 
     $(function() {
       $('.tab-content').hide();
-      $('#projects-section').show();     //show projects section as default(home)
+      $('#projects-section').show();   //show projects section as default(home)
     });
   };
 
