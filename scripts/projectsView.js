@@ -98,6 +98,7 @@
     Project.all.forEach(function(proj) {
       $('#projects').append(proj.toHtml());
     });
+    $('#fact').append(Project.totalCss);
   };
 
   projectView.initIndexPage = function() {
