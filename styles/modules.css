@@ -19,11 +19,35 @@
   color: #F0F3BD;
 }
 
+#city {
+  margin-left: 5.4em;
+}
+
+#contact a {
+  color: black;
+}
+
+#contact h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+#about h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (min-width: 680px) and (max-width: 1199px) {
+  body {
+    background-color: white;
+  }
   article {
     background-color: rgb(245, 245, 245);
     margin: 1em;
     padding: 1em;
+  }
+  p {
+    text-indent: 1em;
   }
   .icon-menu-1 {
     display: none;
@@ -53,6 +77,9 @@
 }
 
 @media (min-width: 1200px) {
+  body {
+    background-color: white;
+  }
   article {
     background-color: rgb(245, 245, 245);
     margin: 1em;
@@ -61,11 +88,15 @@
   body {
     max-width: 80%;
   }
+  p {
+    text-indent: 1em;
+  }
   .icon-menu-1 {
     display: none;
   }
   main {
     margin-left: 20%;
+    min-width: 80%;
   }
   quote {
     display: block;
@@ -92,5 +123,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+  #contact {
+    max-width: 100%;
   }
 }
