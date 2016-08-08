@@ -1,6 +1,6 @@
 //////////// wrap entire file in an IIFE to protect scope ///////////////////////
 
-(function(module) {
+(function alsoWork(module) {
 
   var projectView = {};
 
@@ -98,10 +98,16 @@
     Project.all.forEach(function(proj) {
       $('#projects').append(proj.toHtml());
     });
-    $('#fact').append(Project.totalCss);
+    $('#css-fact').append(Project.totalCss);
+    $('#colons-fact').append(Project.semis);
+  };
+
+  projectView.addMoreSemis = function() {
+    Project.semis += alsoWork.toString().split(';').length; // add semicolons from this file
   };
 
   projectView.initIndexPage = function() {
+    projectView.addMoreSemis();
     projectView.appendToPage();
     projectView.populateFilter('type');
     projectView.populateFilter('completion');
