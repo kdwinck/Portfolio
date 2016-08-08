@@ -29,7 +29,7 @@
     });
   };
 
-  Project.loadFact = function() {
+  Project.getCssTotal = function() {
     Project.totalCss = Project.all.map(function(obj) {
       return obj.css;
     })
@@ -38,11 +38,17 @@
     });
   };
 
+  Project.addSemicolons = function() {
+    Project.semis = 0;  // initalize value of semis to zero
+    Project.semis += workDamnit.toString().split(';').length; // convert anon function to string and split at semicolons
+  };
+
   //////////////////////////////////////////////////////////////////////////////
   Project.getDataFromFile = function() {
     $.getJSON('/data/projects.json', function(rawData, status, XHR) {
       Project.loadContent(rawData);
-      Project.loadFact();
+      Project.getCssTotal();
+      Project.addSemicolons();
       localStorage.eTag = JSON.stringify(XHR.getResponseHeader('eTag'));
       localStorage.rawData = JSON.stringify(rawData);
       projectView.initIndexPage();
@@ -51,7 +57,8 @@
 
   Project.getDataFromStorage = function() {
     Project.loadContent(JSON.parse(localStorage.rawData));
-    Project.loadFact();
+    Project.getCssTotal();
+    Project.addSemicolons();
     projectView.initIndexPage();
   };
 
@@ -74,6 +81,5 @@
   };
 
   module.Project = Project;
-  console.log(workDamnit.toString().split(';').length);
-  console.log(Project.toString().split(';').length);
+
 })(window);
