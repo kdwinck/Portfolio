@@ -48,7 +48,7 @@
     $('#date').on('change', function() {
       $('#projects').empty();
       if ($(this).val()) {
-        // sort by oldest
+        // convert date properties to date objects and sort by oldest first
         Project.all.sort(function (a, b) {
           return (new Date(a.date) - new Date(b.date));
         });

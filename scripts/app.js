@@ -40,7 +40,7 @@
 
   Project.addSemicolons = function() {
     Project.semis = 0;  // initalize value of semis to zero
-    Project.semis += workDamnit.toString().split(';').length; // convert anon function to string and split at semicolons
+    Project.semis += workDamnit.toString().split(';').length; // total semicolons in this file
   };
 
   //////////////////////////////////////////////////////////////////////////////
