@@ -44,39 +44,39 @@
   };
 
   //////////////////////////////////////////////////////////////////////////////
-  Project.getDataFromFile = function() {
+  Project.getDataFromFile = function(callback) {
     $.getJSON('/data/projects.json', function(rawData, status, XHR) {
       Project.loadContent(rawData);
       Project.getCssTotal();
       Project.addSemicolons();
       localStorage.eTag = JSON.stringify(XHR.getResponseHeader('eTag'));
       localStorage.rawData = JSON.stringify(rawData);
-      projectView.initIndexPage();
+      callback();
     });
   };
 
-  Project.getDataFromStorage = function() {
+  Project.getDataFromStorage = function(callback) {
     Project.loadContent(JSON.parse(localStorage.rawData));
     Project.getCssTotal();
     Project.addSemicolons();
-    projectView.initIndexPage();
+    callback();
   };
 
-  Project.fetchContent = function() {
+  Project.fetchContent = function(callback) {
     if (localStorage.rawData) {
       $.ajax({
         url: '/data/projects.json',
         type: 'head',
         success: function(data, status, jqXHR) {
           if (JSON.parse(localStorage.eTag) === jqXHR.getResponseHeader('eTag')) {
-            Project.getDataFromStorage();
+            Project.getDataFromStorage(callback);
           } else {
-            Project.getDataFromFile();
+            Project.getDataFromFile(callback);
           }
         }
       });
     } else {
-      Project.getDataFromFile();
+      Project.getDataFromFile(callback);
     }
   };
 
