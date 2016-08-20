@@ -75,17 +75,9 @@
     });
   };
 
-  projectView.handleNavigation = function() {
-    $('nav li').on('click', function() {
-      var $whatToShow = $(this).data('tab');
-      $('.tab-content').hide();
-      $('#' + $whatToShow).show();
-    });
-
-    $(function() {
-      $('.tab-content').hide();
-      $('#projects-section').show();   //show projects section as default(home)
-    });
+  projectView.showProjects = function() {
+    $('.tab-content').hide();
+    $('#projects-section').show();   //show projects section as default(home)
   };
 
   projectView.toggleNavIcon = function() {
@@ -111,7 +103,7 @@
     projectView.appendToPage();
     projectView.populateFilter('type');
     projectView.populateFilter('completion');
-    projectView.handleNavigation();
+    projectView.showProjects();
     projectView.sortByType();
     projectView.sortByCompletion();
     projectView.sortByDate();
