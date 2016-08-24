@@ -81,3 +81,11 @@ footer p {
 #about {
   background-color: rgb(245, 245, 245);
 }
+
+#nav a {
+  color: #02C39A;
+}
+
+#repos a{
+  color: #02C39A;
+}

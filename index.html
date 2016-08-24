@@ -23,6 +23,16 @@
     </article>
   </script>
 
+  <script id="repo-template" type="text/x-handlebars-template">
+    <li class="repo-item">
+      <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+      <p>Description: {{description}}</p>
+      <p>Language: {{language}}</p>
+      <p>Created: {{created_at}}</p>
+      <p>Last updated: {{updated_at}}</p>
+    </li>
+  </script>
+
   <body id="top">
 
     <header>
@@ -50,6 +60,7 @@
           <li class="icon-home" data-tab='projects-section'><a href="/">Portfolio</a></li>
           <li class="icon-user-male" data-tab='about'><a href="/about">About</a></li>
           <li class="icon-mail" data-tab='contact'><a href="/contact">Contact</a></li>
+          <li class="icon-github-circled-alt2" data-tab='github'><a href="/github">Github</a><li>
         </ul>
 
 
@@ -98,6 +109,11 @@
         </address>
       </section>
 
+      <section id="github" class="tab-content">
+        <h2>Here is a list of some of my Github repos</h2>
+        <ul id="repos"></ul>
+      </section>
+
     </main>
 
     <footer>
@@ -112,16 +128,21 @@
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="scripts/githubToken.js"></script>
     <!-- models -->
     <script type="text/javascript" src="scripts/models/projectsModel.js"></script>
-    <!-- Controllers -->
-    <script type="text/javascript" src="scripts/controllers/aboutController.js"></script>
-    <script type="text/javascript" src="scripts/controllers/contactController.js"></script>
+    <script src="scripts/models/githubModel.js"></script>
     <!-- views -->
     <script type="text/javascript" src="scripts/views/projectsView.js"></script>
     <script type="text/javascript" src="scripts/views/aboutView.js"></script>
     <script type="text/javascript" src="scripts/views/contactView.js"></script>
+    <script src="scripts/views/githubView.js"></script>
+    <!-- Controllers -->
     <script type="text/javascript" src="scripts/controllers/projectsController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/aboutController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/contactController.js"></script>
+    <script src="scripts/controllers/githubController.js"></script>
+
     <script type="text/javascript" src="scripts/routes.js"></script>
   </body>
 
