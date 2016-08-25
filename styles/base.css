@@ -42,7 +42,7 @@ nav {
   background-color: #F0F3BD;
   display: flex;
   justify-content: center;
-  height: 10em;
+  height: 12em;
 }
 
 img {
@@ -82,4 +82,5 @@ p {
 
 a {
   color: white;
+  text-decoration: none;
 }

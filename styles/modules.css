@@ -37,6 +37,11 @@
   justify-content: space-around;
 }
 
+#repos h3 {
+  align-self: center;
+  margin: 1em;
+}
+
 @media (min-width: 680px) and (max-width: 1199px) {
   body {
     background-color: white;
@@ -61,7 +66,7 @@
   }
   #nav {
     display: flex !important;
-    max-height: 3em;
+    max-height: 5em;
   }
   #nav-list {
     display: flex;
@@ -109,7 +114,7 @@
     justify-content: space-around;
   }
   #social {
-    margin-top: 2.7em;
+    margin-top: 1em;
   }
   #nav {
     display: block !important;
