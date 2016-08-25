@@ -82,10 +82,30 @@ footer p {
   background-color: rgb(245, 245, 245);
 }
 
+#github {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  padding: 1em 0em;
+  margin: 1em 0em;
+}
+
+#repos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #nav a {
   color: #02C39A;
 }
 
 #repos a{
   color: #02C39A;
+}
+
+#repos li {
+  background-color: rgb(245, 245, 245);
+  min-width: 100%;
 }
