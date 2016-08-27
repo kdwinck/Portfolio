@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kdwinck/Portfolio#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "express-request-proxy": "^1.0.10"
   }
 }
