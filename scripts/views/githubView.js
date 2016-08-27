@@ -10,7 +10,6 @@
     $('#github').show();
 
     repos.all.forEach(function(ele) {
-      console.log(ele);
       $('#repos').append(template(ele));
     });
   };
