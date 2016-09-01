@@ -2,8 +2,8 @@
 
   var githubController = {};
 
-  githubController.init = function() {
-    repos.getData(githubView.showRepos);
+  githubController.init = function(ctx, next) {
+    next();
   };
 
   module.githubController = githubController;

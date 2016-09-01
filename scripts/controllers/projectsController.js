@@ -3,8 +3,8 @@
 
   Project.fetchContent(projectView.initIndexPage);
 
-  projectsController.init = function() {
-    projectView.showProjects();
+  projectsController.init = function(ctx, next) {
+    next();
   };
 
   module.projectsController = projectsController;
