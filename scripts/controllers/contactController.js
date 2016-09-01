@@ -1,8 +1,8 @@
 (function(module) {
   var contactController = {};
 
-  contactController.init = function() {
-    contactView.showContact();
+  contactController.init = function(ctx, next) {
+    next();
   };
 
   module.contactController = contactController;

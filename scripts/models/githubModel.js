@@ -4,7 +4,7 @@
 
   repos.all = [];
 
-  repos.getData = function(callback) {
+  repos.getData = function(ctx, next) {
     $.get('/github/users/kdwinck/repos' +
           '?per_page=10' +
           '$sort=updated')
@@ -12,7 +12,7 @@
       repos.all = data.filter(function(ele) {
         return ele.owner.login === 'kdwinck';
       });
-      callback();
+      next();
     });
   };
 
